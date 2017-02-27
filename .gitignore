@@ -1,15 +1,24 @@
-*.class
+target/
+!.mvn/wrapper/maven-wrapper.jar
 
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# ignore Maven generated target folders
-target
-
-# ignore eclipse files
-.project
+### STS ###
+.apt_generated
 .classpath
+.factorypath
+.project
 .settings
-.metadata
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
