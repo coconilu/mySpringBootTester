@@ -14,22 +14,17 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import dev.wangyaohui.entity.Person;
-import dev.wangyaohui.repository.PersonRepository;
 import junit.framework.Assert;
 
 @SuppressWarnings("deprecation")
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @WebAppConfiguration
-public class DemoApplicationTests {
+public class WebMVCTests {
 	private MockMvc mockMvc;
 	
 	@Autowired
 	WebApplicationContext webapp;
-	
-	@Autowired
-	PersonRepository personRepository;
 	
 	@Before
 	public void setup(){
@@ -50,21 +45,6 @@ public class DemoApplicationTests {
 		Assert.assertEquals("返回消息不对", "hello booter!", content);
 	}
 	
-	@Test
-	public void testPerson(){
-		Person person = new Person("wangyaohui", "male");
-		
-		personRepository.save(person);
-		
-		for (Person p: personRepository.findAll()){
-			if ("wangyaohui".equals(p.getName())){
-				Assert.assertEquals("male", p.getSex());
-			}
-		}
-		
-		Assert.assertEquals("male", personRepository.testQuery("wangyaohui").getSex());
-		
-		Assert.assertEquals(1, personRepository.testSetNmae("wanghuangming", "wangyaohui"));
-	}
+	
 
 }
