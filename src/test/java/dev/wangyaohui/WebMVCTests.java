@@ -22,13 +22,13 @@ import junit.framework.Assert;
 @WebAppConfiguration
 public class WebMVCTests {
 	private MockMvc mockMvc;
-	
+
 	@Autowired
-	WebApplicationContext webapp;
-	
-	@Before
-	public void setup(){
-		this.mockMvc = MockMvcBuilders.webAppContextSetup(this.webapp).build();
+    private WebApplicationContext webapp;
+
+    @Before
+    public void setup() {
+        this.mockMvc = MockMvcBuilders.webAppContextSetup(this.webapp).build();
 	}
 
 	@Test

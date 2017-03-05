@@ -10,9 +10,12 @@ import dev.wangyaohui.entity.Person;
 import dev.wangyaohui.repository.PersonRepository;
 import junit.framework.Assert;
 
+import javax.transaction.Transactional;
+
 @SuppressWarnings("deprecation")
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Transactional
 public class JPATests {
 	@Autowired
 	PersonRepository personRepository;
