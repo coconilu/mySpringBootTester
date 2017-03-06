@@ -9,8 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import dev.wangyaohui.entity.Person;
 import dev.wangyaohui.repository.PersonRepository;
 import junit.framework.Assert;
-
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 
 @SuppressWarnings("deprecation")
 @RunWith(SpringRunner.class)

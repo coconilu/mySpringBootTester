@@ -36,3 +36,16 @@
 过程：
 1. 依赖spring-boot-starter-aop
 2. 测试用例是处理每一个类的添加了@Counting注解的方法，计算每个方法的调用时长
+
+## Spring事务
+事务管理器，常用的有几种：
+1. JDBC：DataSourceTransactionManager
+2. JPA：JpaTransactionManager
+3. Hibernate：HibernateTransactionManager
+4. JDO：JdoTransactionManager
+5. 分布式事务：JtaTransactionManager
+
+SpringBoot会依据我们使用的数据库技术自动配置事务管理器，并自动开启注解事务的支持，不需要在配置类里使用@EnableTransactionManagement注解
+
+使用的方法很简单，在你的业务层（Service层）的类或方法上使用@Transactional注解，并配置你的事务行为，如propagation、isolation、timeout、readOnly、rollbackFor、noRollbackFor
+
