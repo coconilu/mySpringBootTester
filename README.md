@@ -49,3 +49,9 @@ SpringBoot会依据我们使用的数据库技术自动配置事务管理器，�
 
 使用的方法很简单，在你的业务层（Service层）的类或方法上使用@Transactional注解，并配置你的事务行为，如propagation、isolation、timeout、readOnly、rollbackFor、noRollbackFor
 
+## SpringBoot监控
+有三种途径：Http、jconsole、SSH
+1. HTTP：需要引入spring-boot-starter-actuator和spring-hateoas两个依赖，就可以在浏览器中输入：`localhost:8080/beans`可以看到SpringBoot项目中的beans。还有其他很多信息可以通过此途径查看，如configprops、dump等等
+2. jconsole：只需要在终端输入jconsole就可以了
+3. SSH：需要引入spring-boot-starter-remote-shell这个依赖，还可以通过在application.properties文件中设置登录用的账号密码，management.shell.auth.simple.user.name和management.shell.auth.simple.user.password，还可以通过management.shell.ssh.port设置端口。ssh的指令是：ssh [hostname] -p [port] -l [username]
+
